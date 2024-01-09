@@ -8,6 +8,8 @@ import { useState } from "react";
 import { api } from "../../../services/api";
 import { toast } from "react-toastify";
 
+import style from "./style.module.scss";
+
 export const LoginForm = ({setUser}) => {
 const [showPwd, setShowPwd] = useState(false)
 
@@ -41,9 +43,9 @@ const submit = (payload) => {
 };
 
   return (
-    <div>
+    <div className={style.conteinerLoginForm}>
       <div>
-        <h2>Login</h2>
+        <h2 className="title center">Login</h2>
       </div>
     <form onSubmit={handleSubmit(submit)}>
       <Input 
@@ -64,10 +66,10 @@ const submit = (payload) => {
 
       {showPwd ? <FaRegEye onClick={()=> setShowPwd(!showPwd)} /> : <FaRegEyeSlash onClick={()=> setShowPwd(!showPwd)}/>}
 
-      <div>
-        <button type="submit">Entrar</button>
-        <p>Ainda não possui uma conta?</p>
-        <Link to="/register">Cadastre-se</Link>
+      <div className={style.buttonLogin}>
+        <button type="submit" className="btn">Entrar</button>
+        <p className="paragraph">Ainda não possui uma conta?</p>
+        <Link to="/register" className="btn btnGrey">Cadastre-se</Link>
       </div>
     </form>
     </div>

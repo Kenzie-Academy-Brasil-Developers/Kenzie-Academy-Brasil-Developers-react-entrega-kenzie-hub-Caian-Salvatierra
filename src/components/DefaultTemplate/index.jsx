@@ -1,4 +1,3 @@
-import { Footer } from "../Footer";
 import { Header } from "../Header";
 
 export const DefautTemplate = ({user , userLogout,children}) => {
@@ -6,7 +5,7 @@ export const DefautTemplate = ({user , userLogout,children}) => {
         <>
         <Header user={user} userLogout={userLogout}/>
         {children}
-        <Footer/>
+        
         </>
-    )
+    );
 };

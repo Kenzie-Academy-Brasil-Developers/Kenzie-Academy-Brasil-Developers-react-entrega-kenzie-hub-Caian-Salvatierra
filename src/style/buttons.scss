@@ -24,6 +24,13 @@ color: var(--grey-0);
 
 &.btnGrey{
     background: var(--grey-1);
+    border: none;
+
+    &:hover{
+        filter: brightness(1.2);
+        background: var(--grey-2);
+        
+    } 
 }
 
 }
