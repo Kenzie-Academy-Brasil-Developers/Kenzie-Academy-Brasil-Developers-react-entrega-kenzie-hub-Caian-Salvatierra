@@ -1,0 +1,35 @@
+.containerMain{
+  margin: 0 auto;
+  padding: 49px 0px;
+  width: 20rem;
+  height: 54.3125rem;
+  border-radius: 8px;
+}
+
+.containerRegister{
+  width: 18.5rem;
+  height: 48.375rem;
+  
+}
+
+.headerRegister{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.375rem;
+    
+}
+
+.registerForm{
+    
+    height: 100%;
+    padding: 1.1875rem  1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.0625rem;
+
+    border-radius: 4px;
+
+    background: var(--grey-3);
+
+    
+}

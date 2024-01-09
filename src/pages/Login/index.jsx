@@ -1,11 +1,15 @@
 import { LoginForm } from "../../components/forms/LoginForm";
+import LogoKenzieHub from "../../assets/img/logoKenzieHub.png";
 
 
-export const Login = () => {
+export const Login = ({setUser}) => {
     return (
       <main>
-        <h1> Página de Login</h1>
-        <LoginForm/>
+        <div>
+          
+          <img src={LogoKenzieHub} alt="LogoKenzieHub" />
+        </div>
+        <LoginForm setUser={setUser}/>
       </main>
     );
   };

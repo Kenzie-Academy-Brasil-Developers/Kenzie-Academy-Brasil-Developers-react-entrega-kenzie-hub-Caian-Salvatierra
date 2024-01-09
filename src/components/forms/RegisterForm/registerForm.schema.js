@@ -9,12 +9,12 @@ import { z } from "zod";
       .min(1, "O e-mail é obrigatório."),
     password: z
       .string()
-      .min(8, "São necessários pelo menos oito caracteres.")
+      .min(8, "São necessários pelo menos 8 caracteres.")
       .regex(/[a-z]+/, "É necessário conter pelo menos uma letra minúscula.")
       .regex(/[A-Z]+/, "É necessário conter pelo menos uma letra maiúscula.")
       .regex(/[0-9]+/, "É necessário conter pelo menos um número.")
       .regex(
-        /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]+/,
+        /[!@#$%^&*()_+{}\\[\]:;<>,.?~\\-]+/,
         "É necessário conter pelo menos um caracter especial."
       ),
     confirmPassword: z.string().min(1, "Confirmar a senha é obrigatório."),
@@ -23,8 +23,8 @@ import { z } from "zod";
 
     contact: z.string().min(1, "Informe um contato")
     .regex(/[0-9]+/, "Informe apenas números."),
-
-    techs: z.string().min(1,"Selecione um dos campos abaixo"),
+    
+    course_module: z.string().min(1,"Selecione um dos campos abaixo"),
     
   }).refine(({ password, confirmPassword }) => password === confirmPassword, {
     message: "As senhas não correspondem.",

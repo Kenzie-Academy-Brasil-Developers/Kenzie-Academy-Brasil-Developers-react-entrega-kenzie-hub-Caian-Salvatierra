@@ -1,0 +1,53 @@
+.title{
+    color: var(--grey-0);
+    font-family: var(--font-family-primary);
+    font-weight: 700;
+    font-size: clamp(0.8rem, 4vw, 1.125rem);
+    line-height: 28px;
+
+    &.two{
+        font-weight: 700;
+        font-size:  clamp(0.5rem, 4vw, 1rem);
+        line-height: 2.125rem;
+    }
+
+    &.label{
+    
+    font-size: 0.75rem;
+    font-weight: 400;
+    }
+
+    &.center{
+        text-align: center;
+    }
+
+    
+}
+
+.headline{
+    font-family: var(--font-family-primary);
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    color: var(--grey-1);
+    
+    &.bold{
+        font-weight: 700;
+    }
+
+    &.center{
+        text-align: center;
+    }
+}
+
+.paragraph{
+    color: var(--grey-1);
+    font-family: var(--font-family-primary);
+    font-weight: 400;
+    font-size: clamp(0.3rem, 3vw, 1rem);
+    line-height: 1.522 5rem;
+
+    &.center{
+        text-align: center;
+    }
+}

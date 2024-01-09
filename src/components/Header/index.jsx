@@ -1,5 +1,10 @@
-export const Header = () =>{
+import  LogoKenzieHub    from "../../assets/img/logoKenzieHub.png";
+
+export const Header = ({userLogout}) =>{
     return(
-        <h1>olá mundo</h1>
+        <div>
+            <img src={LogoKenzieHub} alt="Logo KenzieHub" />
+            <button onClick={userLogout}>Sair</button>
+        </div>
     )
-}
+};
