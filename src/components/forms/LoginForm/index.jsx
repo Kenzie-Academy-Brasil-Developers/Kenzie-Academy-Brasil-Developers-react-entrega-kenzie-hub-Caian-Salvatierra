@@ -3,16 +3,13 @@ import {Input} from "../Input/index";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form";
 import { loginFormSchema } from "./loginForm.schema";
-import { FaRegEyeSlash,FaRegEye }  from "react-icons/fa";
-import { useState } from "react"; 
 import { api } from "../../../services/api";
 import { toast } from "react-toastify";
 
 import style from "./style.module.scss";
+import { InputPassword } from "../InputPassword";
 
 export const LoginForm = ({setUser}) => {
-const [showPwd, setShowPwd] = useState(false)
-
   const {
   register, 
   handleSubmit, 
@@ -56,15 +53,14 @@ const submit = (payload) => {
       {...register("email")}
       />
 
-      <Input 
-      label="Senha" 
-      type= {showPwd ? "text" : "password"}
+      <InputPassword 
+      label="Digite sua Senha" 
+      type= "text" 
       id="password" 
       error={errors.password}
       {...register("password")}
       />
 
-      {showPwd ? <FaRegEye onClick={()=> setShowPwd(!showPwd)} /> : <FaRegEyeSlash onClick={()=> setShowPwd(!showPwd)}/>}
 
       <div className={style.buttonLogin}>
         <button type="submit" className="btn">Entrar</button>

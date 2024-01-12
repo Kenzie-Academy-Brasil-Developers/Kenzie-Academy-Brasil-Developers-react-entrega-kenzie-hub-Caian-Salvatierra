@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Input} from "../Input/index";
+import { InputPassword } from "../InputPassword";
 import { registerFormSchema } from "./registerForm.schema";
 import { api } from "../../../services/api";
 import { SelectForm } from "../SelectForm";
@@ -62,7 +63,7 @@ export const RegisterForm = () => {
             {...register("email")}
             />  
 
-            <Input
+            <InputPassword
             label = "Senha"
             type = "password"
             id = "password"
@@ -71,7 +72,7 @@ export const RegisterForm = () => {
             {...register("password")}
             />
 
-            <Input
+            <InputPassword
             label = "Confirme sua Senha"
             type = "password"
             placeholder="Confirme sua Senha"
