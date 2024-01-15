@@ -1,14 +1,13 @@
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import { RoutesMain } from "./routes/RoutesMain";
 import "./style/index.scss";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
+const App = () => {
   return (
     <>
-      
       <RoutesMain />
-      <ToastContainer theme='dark'/>
+      <ToastContainer theme="dark" />
     </>
   );
 }

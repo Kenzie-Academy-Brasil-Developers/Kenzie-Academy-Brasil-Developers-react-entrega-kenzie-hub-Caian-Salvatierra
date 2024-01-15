@@ -6,11 +6,12 @@ export const Input = forwardRef(
     return (
       <div className={style.containerInput}>
         <label htmlFor={id}>{label}</label>
-        <input 
-        className="headline"
-        placeholder={placeholder} 
-        ref={ref} 
-        {...rest}  />
+        <input
+          className="headline"
+          placeholder={placeholder}
+          ref={ref}
+          {...rest}
+        />
         {error ? <p>{error.message}</p> : null}
       </div>
     );
