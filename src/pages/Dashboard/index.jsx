@@ -12,7 +12,7 @@ export const Dashboard = ({ user, userLogout }) => {
             </div>
             <div className={style.paragraph}>
               <p className="headline bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+               {user?.course_module}
               </p>
             </div>
           </div>

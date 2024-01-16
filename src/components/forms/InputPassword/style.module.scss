@@ -13,9 +13,14 @@
 
   .inputGrid {
     position: relative;
+
+  
   }
 
-
+  p{
+    margin-bottom: 1rem;  
+    color: var(--color-primary);
+}
   input{
     width: 88%;
     height: 2.4375rem;
