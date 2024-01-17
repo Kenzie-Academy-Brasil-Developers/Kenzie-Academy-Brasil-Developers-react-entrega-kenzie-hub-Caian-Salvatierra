@@ -7,7 +7,7 @@ export const Input = forwardRef(
       <div className={style.containerInput}>
         <label htmlFor={id}>{label}</label>
         <input 
-        className="headline"
+        className={style.input}
         placeholder={placeholder} 
         ref={ref} 
         {...rest}  />

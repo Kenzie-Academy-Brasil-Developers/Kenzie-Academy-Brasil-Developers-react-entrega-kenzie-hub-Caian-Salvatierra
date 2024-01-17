@@ -44,6 +44,7 @@ export const LoginForm = ({ setUser }) => {
       <form onSubmit={handleSubmit(submit)}>
         <Input
           label="Email"
+          placeholder= "Digite o seu Email"
           type="email"
           id="email"
           error={errors.email}
@@ -52,10 +53,12 @@ export const LoginForm = ({ setUser }) => {
 
         <InputPassword
           label="Digite sua Senha"
+          placeholder= "Digite sua Senha"
           type="text"
           id="password"
           error={errors.password}
           {...register("password")}
+          
         />
 
         <div className={style.buttonLogin}>
