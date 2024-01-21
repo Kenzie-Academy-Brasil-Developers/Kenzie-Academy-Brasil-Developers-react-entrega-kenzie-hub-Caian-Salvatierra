@@ -1,15 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { Input } from "../Input/index";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { loginFormSchema } from "./loginForm.schema";
-import { api } from "../../../services/api";
-import { toast } from "react-toastify";
+
+
 
 import style from "./style.module.scss";
 import { InputPassword } from "../InputPassword";
+import { useContext } from "react";
+import { UserContext } from "../../../providers/UserContext";
 
-export const LoginForm = ({ setUser }) => {
+export const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -18,19 +20,7 @@ export const LoginForm = ({ setUser }) => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const navigate = useNavigate();
-
-  const userLogin = async (payload) => {
-    try {
-      const { data } = await api.post("/sessions", payload);
-      navigate("/dashboard");
-      setUser(data.user);
-      toast.success("Login realizado com sucesso");
-    } catch (error) {
-      console.log(error);
-      toast.error("Ops! Credencias invalidas");
-    }
-  };
+  const {userLogin} = useContext(UserContext);
 
   const submit = (payload) => {
     userLogin(payload);
@@ -41,7 +31,7 @@ export const LoginForm = ({ setUser }) => {
       <div>
         <h2 className="title center">Login</h2>
       </div>
-      <form onSubmit={handleSubmit(submit)}>
+      <form className={style.formLogin} onSubmit={handleSubmit(submit)}>
         <Input
           label="Email"
           placeholder= "Digite o seu Email"
@@ -54,7 +44,6 @@ export const LoginForm = ({ setUser }) => {
         <InputPassword
           label="Digite sua Senha"
           placeholder= "Digite sua Senha"
-          type="text"
           id="password"
           error={errors.password}
           {...register("password")}

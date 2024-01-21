@@ -1,26 +1,19 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Dashboard } from "../pages/Dashboard";
 import { NotFoundPage } from "../pages/NotFoundPage";
-import { useState } from "react";
+
 
 export const RoutesMain = () => {
-  const [user, setUser] = useState(null);
-  const navigate = useNavigate();
-
-  const userLogout = () => {
-    setUser(null);
-    navigate("/");
-  };
-
+  
   return (
     <Routes>
-      <Route path="/" element={<Login setUser={setUser} />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/" element={<Login/>} />
+      <Route path="/register" element={<Register/>} />
       <Route
         path="/dashboard"
-        element={<Dashboard user={user} userLogout={userLogout} />}
+        element={<Dashboard/>}
       />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

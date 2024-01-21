@@ -11,6 +11,12 @@
     padding: 2.0625rem 1.125rem;
 }
 
+.formLogin{
+ display: flex;
+ flex-direction: column;
+ gap: 1.125rem;
+}
+
 .buttonLogin{
     display: flex;
     flex-direction: column;

@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import { DefautTemplate } from "../../components/DefaultTemplate";
 import style from "./style.module.scss";
+import { UserContext } from "../../providers/UserContext";
 
-export const Dashboard = ({ user, userLogout }) => {
+export const Dashboard = () => {
+  const {user} = useContext(UserContext);
+
   return (
     <div className={style.container}>
-      <DefautTemplate userLogout={userLogout}>
+      <DefautTemplate >
         <main className={style.containerText}>
           <div className={style.user}>
             <div className={style.name}>

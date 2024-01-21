@@ -3,11 +3,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../Input/index";
 import { InputPassword } from "../InputPassword";
 import { registerFormSchema } from "./registerForm.schema";
-import { api } from "../../../services/api";
 import { SelectForm } from "../SelectForm";
-import { useNavigate } from "react-router-dom";
+
 
 import style from "./style.module.scss";
+import { UserContext } from "../../../providers/UserContext";
+import { useContext } from "react";
 
 export const RegisterForm = () => {
   const {
@@ -19,18 +20,7 @@ export const RegisterForm = () => {
     resolver: zodResolver(registerFormSchema),
   });
 
-  const navigate = useNavigate();
-
-  const userRegister = async (payload) => {
-    try {
-      const { data } = await api.post("/users", payload);
-      navigate("/");
-      console.log(data);
-      alert("Cadastro realizado");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const {userRegister} = useContext(UserContext);
 
   const submit = (payload) => {
     userRegister(payload);
@@ -60,7 +50,6 @@ export const RegisterForm = () => {
 
         <InputPassword
           label="Senha"
-          type="password"
           id="password"
           placeholder="Digite aqui sua senha"
           error={errors.password}
@@ -69,7 +58,7 @@ export const RegisterForm = () => {
 
         <InputPassword
           label="Confirme sua Senha"
-          type="password"
+          
           placeholder="Confirme sua Senha"
           error={errors.confirmPassword}
           {...register("confirmPassword")}

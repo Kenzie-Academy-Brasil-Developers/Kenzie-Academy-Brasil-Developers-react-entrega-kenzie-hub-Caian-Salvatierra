@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Header } from "../Header";
+import { UserContext } from "../../providers/UserContext";
 
-export const DefautTemplate = ({ user, userLogout, children }) => {
+export const DefautTemplate = ({children }) => {
+
+  const {user} = useContext(UserContext);
   return (
     <>
-      <Header user={user} userLogout={userLogout} />
+      <Header user={user}/>
       {children}
     </>
   );
