@@ -3,6 +3,7 @@ import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Dashboard } from "../pages/Dashboard";
 import { NotFoundPage } from "../pages/NotFoundPage";
+import { PrivatesRoutes } from "./PrivatesRoutes";
 
 
 export const RoutesMain = () => {
@@ -11,10 +12,11 @@ export const RoutesMain = () => {
     <Routes>
       <Route path="/" element={<Login/>} />
       <Route path="/register" element={<Register/>} />
-      <Route
-        path="/dashboard"
-        element={<Dashboard/>}
-      />
+
+      <Route element = {<PrivatesRoutes/>}> 
+        <Route path="/dashboard" element={<Dashboard/>}/>
+      </Route>
+
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
